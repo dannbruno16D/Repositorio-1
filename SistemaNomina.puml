@@ -1,0 +1,51 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide empty members
+
+class NominaEmpresa {
+    +{static} main(args: String[]): void
+}
+
+abstract class Empleado {
+    #{static} totalEmpleados: int
+    #{static} proximoId: int
+    #id: int
+    #nombre: String
+    #cedula: String
+    #sueldoBase: double
+    +Empleado(nombre: String, cedula: String, sueldoBase: double)
+    +{static} obtenerTotalEmpleados(): int
+    +{static} mostrarEstadisticas(empleados: Empleado[]): void
+    +{abstract} calcularSueldo(): double
+    +{abstract} obtenerDetalles(): String
+}
+
+class Obrero {
+    +Obrero(nombre: String, cedula: String, sueldoBase: double)
+    +calcularSueldo(): double
+    +obtenerDetalles(): String
+}
+
+class Supervisor {
+    -{static} BONIFICACION: double
+    +Supervisor(nombre: String, cedula: String, sueldoBase: double)
+    +calcularSueldo(): double
+    +obtenerDetalles(): String
+}
+
+class Gerente {
+    -{static} BONIFICACION: double
+    +Gerente(nombre: String, cedula: String, sueldoBase: double)
+    +calcularSueldo(): double
+    +obtenerDetalles(): String
+}
+
+' Relación de asociación
+NominaEmpresa ..> Empleado : usa / asocia
+
+' Relaciones de herencia
+Empleado <|-- Obrero
+Empleado <|-- Supervisor
+Empleado <|-- Gerente
+
+@enduml
