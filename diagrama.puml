@@ -1,8 +1,0 @@
-@@startuml
-class Vehiculo{
-
-}
-class Auto extends Vehiculo{
-
-}
-@@enduml
