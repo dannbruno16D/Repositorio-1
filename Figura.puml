@@ -1,0 +1,24 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Figura {
+  + dibujar() : void
+}
+
+class Circulo {
+  + dibujar() : void
+}
+
+class Triangulo {
+  + dibujar() : void
+}
+
+class Cuadro {
+  + dibujar() : void
+}
+
+Figura <|-- Circulo
+Figura <|-- Triangulo
+Figura <|-- Cuadro
+
+@enduml
