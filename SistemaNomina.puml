@@ -16,6 +16,7 @@ abstract class Empleado {
     +Empleado(nombre: String, cedula: String, sueldoBase: double)
     +{static} obtenerTotalEmpleados(): int
     +{static} mostrarEstadisticas(empleados: Empleado[]): void
+    ..
     +{abstract} calcularSueldo(): double
     +{abstract} obtenerDetalles(): String
 }
